@@ -1,14 +1,19 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Image} from 'react-native';
 import C2 from './componentes/Caixas';
 import Estilos from './estilos/style';
 
 export default function App1(){
+  var vexibir=false;
   return(
     <View style={Estilos.conteiner}>
-      <C2/>
+      <Image
+        source={require()}
+      />
+      <C2 exibir={vexibir}/>
       <Text style={Estilos.textoTitulo}>Olá mundo</Text>
       <Text style={Estilos.textoPadrao}>Hello world</Text>
+      {vexibir && <Text>Hello world</Text>}
    </View>
   );
 };

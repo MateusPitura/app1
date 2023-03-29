@@ -6,7 +6,6 @@ export default StyleSheet.create({
         backgroundColor:'#fff',
         alignItems:'center',
         justifyContent:'center',
-        marginTop:50,
     },
     textoCursos:{
         color:'#00f',
@@ -24,5 +23,10 @@ export default StyleSheet.create({
         width:250,
         height:250,
         resizeMode:'contain',
-    }
+    },
+    imagemFundo:{
+        flex:1,
+        resizeMode:"cover",
+        width:"100%",
+    },
 })

@@ -12,12 +12,15 @@ export default function App1(){
     <View style={Estilos.conteiner}>
       <Button
         title={ligado?"Desligar":"Ligar"}
-        onPress={setLigado(!ligado)}
+        onPress={()=>setLigado(!ligado)}
       />
+      {ligado?
       <View>
         <Text style={Estilos.textoTitulo}>Olá mundo</Text>
-        <Text style={Estilos.textoPadrao}>Hello world</Text>
       </View>
+      :
+      <Text style={Estilos.textoPadrao}>Hello world</Text>
+      }
     </View>
   );
 };

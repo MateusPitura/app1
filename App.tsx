@@ -8,6 +8,8 @@ export default function App1(){
     <View style={Estilos.conteiner}>
         <Text style={Estilos.textoTitulo}>Olá mundo</Text>
         <Text style={Estilos.textoPadrao}>Hello world</Text>
+        <CarroC nome="Golf"/>
+        <CarroC nome="Bolinha"/>
     </View>
   );
 };

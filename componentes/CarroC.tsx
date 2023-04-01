@@ -5,13 +5,15 @@ export default class Carro extends Component{
     state={
         ligado:true,
     }
-    render(props){
+    render(props: any){
         return(
             <View>
-                <Text>Carro:{this.props.nome} - Ligado:{this.state.ligado?"Sim":"Não"}</Text>
+                <Text>Carro: {this.props.nome} - Ligado: {this.state.ligado?"Sim":"Não"}</Text>
                 <Button
                     title={this.state.ligado?"Desligar":"Ligar"}
-                    onPress
+                    onPress={
+                        ()=>{{this.setState({ligado:!this.state.ligado})}}
+                    }
                 />
             </View>
         )

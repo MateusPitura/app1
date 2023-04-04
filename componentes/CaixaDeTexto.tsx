@@ -3,7 +3,7 @@ import {View, TextInput, Text} from 'react-native';
 
 export default function(){
 
-    const [nome, setNome] = useState("");
+    const [nome, setNome] = useState("Mateus");
 
     return(
         <View>
@@ -12,7 +12,8 @@ export default function(){
                 style={{borderWidth: 1, borderColor: '#000'}}
                 value={nome}
                 onChangeText={text=>setNome(text)}
-                multline='false'
+                multiline={true}
+                autoCapitalize="sentences"
             />
             <Text>O texto digitado é: {nome}</Text>
         </View>

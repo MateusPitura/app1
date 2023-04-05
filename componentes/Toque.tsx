@@ -1,17 +1,22 @@
 import React, {useState} from 'react'
-import {View, Text, TouchableHighlight} from 'react-native'
+import {View, Text, TouchableOpacity} from 'react-native'
 import Estilo from '../estilos/style'
 
 export default function(){
 
-    const [cont, setCont]
+    const [cont, setCont]=useState(0);
+
+     const contar=()=>{setCont(cont+1)}
 
     return(
         <View>
-            <TouchableHighlight>
+            <TouchableOpacity 
+                style={Estilo.botao}
+                onPress={contar}
+            >
                 <Text>Hello world</Text>
-            </TouchableHighlight>
-            <Text></Text>
+            </TouchableOpacity>
+            <Text>{cont}</Text>
         </View>
     );
 }

@@ -29,5 +29,9 @@ export default StyleSheet.create({
         resizeMode:"cover",
         width:"100%",
     },
-    
+    botao:{
+        alignItems:"center",
+        backgroundColor:"#ccc",
+        padding:10,
+    }
 })

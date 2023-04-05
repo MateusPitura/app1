@@ -29,4 +29,5 @@ export default StyleSheet.create({
         resizeMode:"cover",
         width:"100%",
     },
+    
 })

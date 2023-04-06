@@ -33,5 +33,15 @@ export default StyleSheet.create({
         alignItems:"center",
         backgroundColor:"#ccc",
         padding:10,
+    },
+    mod:{
+        backgroundColor:"#222",
+        margin:20,
+        padding:20,
+        borderRadius:20,
+        elevation:10,
+    },
+    textoMod:{
+        color:"#fff",
     }
 })

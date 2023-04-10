@@ -1,15 +1,26 @@
 import React, {useState} from 'react';
-import {View, Text, Button, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView, StatusBar, Button} from 'react-native';
 import Estilos from './estilos/style';
-import Modal from './componentes/Modal';
-import Rl from './componentes/Rolagem';
 
 export default function App1(){
+
+  const [modo,setModo]=useState("light-content")
+
   return(
     <SafeAreaView style={Estilos.conteiner}>
-        <Text style={Estilos.textoTitulo}>Olá mundo</Text>
-        <Text style={Estilos.textoPadrao}>Hello world</Text>
-        <Rl/>
+      <StatusBar
+        backgroundColor="pink"  
+        barStyle={modo}
+        hidden={false}
+        animated={true}
+        translucent={true}
+      />
+      <Text style={Estilos.textoTitulo}>Olá mundo</Text>
+      <Text style={Estilos.textoPadrao}>Hello world</Text>
+      <Button
+        title="Modo escuro"
+        onPress={()=>{setModo("dark-content")}}
+      />
     </SafeAreaView>
   );
 }; 

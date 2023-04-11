@@ -6,10 +6,49 @@ import {NavigationContainer} from '@react-navigation/native';
 
 const Pilha=createStackNavigator();
 
+function TelaHome({navigation}){
+  return(
+    <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+      <Text>Tela Home</Text>
+      <Button
+        title="Tela Canal"
+        onPress={()=>navigation.navigate("Canal")}
+      />
+      <Button
+        title="Voltar"
+        onPress={()=>navigation.goBack()}
+      />
+    </View>
+  )
+}
+
+function TelaCanal({navigation}){
+  return(
+    <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
+      <Text>Tela Canal</Text>
+      <Button
+        title="Tela Home"
+        onPress={()=>navigation.navigate("Home")}
+      />
+    </View>
+  )
+}
+
 export default function App1(){
   return(
     <NavigationContainer>
-      <View><Text>Oi</Text></View>
+      <Pilha.Navigator initialRouteName="Canal">
+        <Pilha.Screen
+          name="Home"
+          component={TelaHome}
+          options={{title:'Tela Inicial'}}
+        />
+        <Pilha.Screen
+          name="Canal"
+          component={TelaCanal}
+          options={{title:'Tela Canal'}}
+        />
+      </Pilha.Navigator>
     </NavigationContainer>
   );
 }; 

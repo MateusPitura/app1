@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Button} from 'react-native';
+import {View, Text, SafeAreaView, Button, Alert} from 'react-native';
 import Estilos from './estilos/style';
+import Cabecalho from './estilos/cabecalho-style';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
@@ -77,7 +78,23 @@ export default function App1(){
         <Pilha.Screen
           name="Home"
           component={TelaHome}
-          options={{title:'Tela Inicial'}}
+          options={{
+            title:'Tela Inicial',
+            headerStyle:{
+              backgroundColor:'#008',
+            },
+            headerTintColor:'#fff',
+            headerTitleStyle:{
+              fontWeight:'bold',
+            },
+            headerRight:()=>(
+              <Button
+                title="Cursos"
+                color="#000"
+                onPress={()=>Alert.alert('Botão Clicado')}
+              /> 
+            ),
+          }}
         />
         <Pilha.Screen
           name="Canal"
@@ -92,7 +109,16 @@ export default function App1(){
         <Pilha.Screen
           name="ReactNative"
           component={TelaReactNative}
-          options={{title:'Tela React Native'}}
+          options={{
+            title:'Tela React Native',
+            headerStyle:{
+              backgroundColor:'#008',
+            },
+            headerTintColor:'#fff',
+            headerTitleStyle:{
+              fontWeight:'bold',
+            }
+          }}
         />
       </Pilha.Navigator>
     </NavigationContainer>

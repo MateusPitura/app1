@@ -1,17 +1,15 @@
 import React from 'react';
 import {View, Text, SafeAreaView, Button, Alert} from 'react-native';
 import Estilos from './estilos/style';
-import Cabecalho from './estilos/cabecalho-style';
 import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import TelaHomeExterna from './componentes/TelaHome';
 
-const Guias=createBottomTabNavigator();
+const Gavetas=createDrawerNavigator();
 
 function TelaHome({navigation}: any){
   return(
-    <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
-      <Text>Tela Home</Text>
-    </View>
+    <TelaHomeExterna nav={navigation}/>
   )
 }
 
@@ -34,8 +32,8 @@ function TelaCursos({navigation}: any){
 export default function App1(){
   return(
     <NavigationContainer>
-      <Guias.Navigator initialRouteName="Canal">
-        <Guias.Screen
+      <Gavetas.Navigator initialRouteName="Canal">
+        <Gavetas.Screen
           name="Home"
           component={TelaHome}
           options={{
@@ -56,17 +54,17 @@ export default function App1(){
             ),
           }}
         />
-        <Guias.Screen
+        <Gavetas.Screen
           name="Canal"
           component={TelaCanal}
           options={{title:'Tela Canal'}}
         />
-        <Guias.Screen
+        <Gavetas.Screen
           name="Cursos"
           component={TelaCursos}
           options={{title:'Tela Cursos'}}
         />
-      </Guias.Navigator>
+      </Gavetas.Navigator>
     </NavigationContainer>
   );
 }; 

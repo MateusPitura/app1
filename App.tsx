@@ -1,20 +1,35 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import {View, Text, Button} from 'react-native';
-import Globais from './componentes/Globais';
+import AsyncStorage from '@react-native-community/async-storage'
 
-export default class App1 extends Component{
+export default function App1(){
 
-  nome=Globais.nome;
-  canal = Globais.canal;
-  numero = Globais.num;
+  const [curso,setCurso] = useState("")
 
-  render(){
-    return(
+  const armazenar = (chave: any, valor: any)=>{
+    AsyncStorage.setItem(chave, valor)
+  }
+
+  const buscar = async(chave: any)=>{
+    const valor = await AsyncStorage.getItem(chave);
+    setCurso(valor);
+  }
+
+  return(
       <View>
-        <Text>Hello world {this.nome}</Text>
-        <Text>Hello world {this.canal}</Text>
-        <Text>Hello world {this.numero}</Text>
+        <Text>Olá mundo {curso}</Text>
+        <Button
+          title="Armazenar"
+          onPress={()=>
+            armazenar("peso", "63")
+          }
+        />
+        <Button
+          title="Exibir"
+          onPress={()=>
+            buscar("peso")
+          }
+        />
       </View>
     )
-  }
 }
